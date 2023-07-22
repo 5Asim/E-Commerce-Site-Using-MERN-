@@ -1,8 +1,14 @@
 import styles from "./navbar.module.css";
-import React from "react";
+import React, { useContext } from "react";
+import { Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Store } from "../../store";
+
 const Navbar =() =>
 {
+    const {state} = useContext(Store);
+    const {cart} = state;
+
     return(
         <nav className={`container ${styles.navigation}`}>
         <div>
@@ -13,9 +19,18 @@ const Navbar =() =>
                 <li>Products</li>
                 <li>About</li>
                 <li>Contact</li>
-                <li>Cart</li>
+                <Link to="/cart">
+                <li>Cart
+                {cart.cartItems.length > 0 &&(
+                    <Badge pill bg="danger">
+                        {cart.cartItems.length}
+                    </Badge>
+                )}</li>
+                </Link>
+                
                 <li>Signup</li>
-                <li>Login</li>
+                <Link to="/signin" ><li>Login</li></Link>
+                
                
             </ul>
             
