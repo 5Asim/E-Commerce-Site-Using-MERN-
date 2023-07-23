@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function CartScreen()
 {
-    const {state,dispatc: ctxDispach} = useContext(Store)
+    const {state,dispatch: ctxDispach} = useContext(Store)
     const {
         cart:{cartItems},
 

@@ -27,9 +27,9 @@ const Navbar =() =>
                     </Badge>
                 )}</li>
                 </Link>
+                <Link to="/signin" ><li>Signin</li></Link>
+                <Link to="/signup" ><li>SignUp</li></Link>
                 
-                <li>Signup</li>
-                <Link to="/signin" ><li>Login</li></Link>
                 
                
             </ul>
